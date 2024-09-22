@@ -1,0 +1,17 @@
+nav .navbar-brand img {
+    height: 24px;
+}
+.form-control{
+    border: none;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+
+.products img{
+    height: 250px;
+    object-fit: contain;
+}
+footer img{
+    height: 24px;
+}
