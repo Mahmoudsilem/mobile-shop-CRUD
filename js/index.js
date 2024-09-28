@@ -4,7 +4,10 @@ const inputProductName = document.getElementById("inputProductName");
 const inputProductPrice = document.getElementById("inputProductPrice");
 const InputProductDescirption = document.getElementById("InputProductDescirption");
 const InputProductImage = document.getElementById("InputProductImage");
-    
+
+const addBtn = document.getElementById("addBtn");
+const searchProduts = document.getElementById("searchProduts");
+
 let oldProductList;
 let updatedProductIndex;
 
@@ -59,7 +62,7 @@ function searchProdut(searchInput){
     let container = [];
 
 
-    for(i = 0; i < productsList.length; i++){
+    for(let i = 0; i < productsList.length; i++){
         if(productsList[i].productName.toLocaleLowerCase().toUpperCase().includes(searchInput.value.toLocaleLowerCase().toUpperCase())){
             container.push(productsList[i])
         }
@@ -101,3 +104,7 @@ function updateProduct(){
     // oldProductList = undefined;
 } 
 
+addBtn.addEventListener("click",function(){addProduct()});
+addBtn.nextElementSibling.addEventListener("click",function(){updateProduct()});
+
+searchProduts.addEventListener("keyup",function(){searchProdut(this)});

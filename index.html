@@ -26,28 +26,32 @@
             <div class="inner ">
                 <div class="form-floating mb-3 border-0  border-bottom">
                     <input type="text" class="form-control" id="inputProductName" placeholder="Product Name">
+                    <p class="d-none text-danger">Please enter a valid product name</p>
                     <label for="inputProductName">Product Name</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="number" class="form-control" id="inputProductPrice" placeholder="Product Price">
+                    <p class="d-none text-danger">Please enter a valid price</p>
                     <label for="inputProductPrice">Product Price</label>
                 </div>
                 <div class="form-floating mb-3">
                     <textarea class="form-control" id="InputProductDescirption"
                         placeholder="Product Descirption"></textarea>
+                        <p class="d-none text-danger">Please provide a product description</p>
                     <label for="InputProductDescirption">Product Descirption</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="file" class="form-control" id="InputProductImage" placeholder="Product Image">
+                    <p class="d-none text-danger">Please provide a product description</p>
                     <label for="InputProductImage">Product Image</label>
                 </div>
-                <button id="addBtn" onclick="addProduct()" class="btn btn-outline-success w-100 d-inline-block">Add
+                <button id="addBtn" class="btn btn-outline-success w-100 d-inline-block">Add
                     Product</button>
-                <button id="updateBtn" onclick="updateProduct()"
+                <button id="updateBtn" onclick=""
                     class="btn btn-outline-primary w-100 d-none  ms-3">Update Product</button>
             </div>
             <form class="d-flex mt-5 border rounded-2" role="search">
-                <input onkeyup="searchProdut(this)" class="form-control me-2" type="search" placeholder="Search Prodact"
+                <input id="searchProduts" class="form-control me-2" type="search" placeholder="Search Prodact"
                     aria-label="Search">
             </form>
         </div>
