@@ -1,19 +1,20 @@
-var inputProductName = document.getElementById("inputProductName");
-var inputProductPrice = document.getElementById("inputProductPrice");
-var InputProductDescirption = document.getElementById("InputProductDescirption");
-var InputProductImage = document.getElementById("InputProductImage");
+"use strict"
+
+const inputProductName = document.getElementById("inputProductName");
+const inputProductPrice = document.getElementById("inputProductPrice");
+const InputProductDescirption = document.getElementById("InputProductDescirption");
+const InputProductImage = document.getElementById("InputProductImage");
     
-    
-var oldProductList;
-var updatedProductIndex;
+let oldProductList;
+let updatedProductIndex;
 
 
-productsList = JSON.parse(localStorage.getItem("MahmoudShopProductList")) || [];
+let productsList = JSON.parse(localStorage.getItem("MahmoudShopProductList")) || [];
 if (productsList){
     displayProducts(productsList);
 }
 function addProduct(){
-    var product = {
+    const product = {
         productName:inputProductName.value,
         price:inputProductPrice.value,
         descirption:InputProductDescirption.value,
@@ -27,8 +28,8 @@ function addProduct(){
 }
 
 function displayProducts(arr){
-    var container = ``;
-    for(i = 0; i < arr.length; i++){
+    let container = ``;
+    for(let i = 0; i < arr.length; i++){
         container +=
                 `
                     <div  class="item col-md-3">
@@ -55,7 +56,7 @@ function clearForm(){
     InputProductImage.value = null;
 }
 function searchProdut(searchInput){
-    var container = [];
+    let container = [];
 
 
     for(i = 0; i < productsList.length; i++){
