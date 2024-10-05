@@ -41,12 +41,11 @@ function displayProducts(arr){
                             <p class="mb-2">${arr[i].productName}</p>
                             <p class="mb-2"> <span>Prodact Price:</span> <span class="text-primary">${arr[i].price}</span> <span class="text-primary">L.E</span></p>
                             <p>Prodact Descirption: ${arr[i].descirption}</p>
-                            <button onclick="deleteProduct(${i})" class="btn btn-sm btn-outline-danger w-100 mb-2">Delete <i class="fas fa-trash-alt"></i></button>
+                            <button onclick="deleteProduct(${productsList.length == arr.length?i:arr[i].oldIndex})" class="btn btn-sm btn-outline-danger w-100 mb-2">Delete <i class="fas fa-trash-alt"></i></button>
                             <button onclick="editProduct(${i})" class="btn btn-sm btn-outline-info w-100 mb-2">Edit <i class="fas fa-pen"></i></button>
                         </div>
                     </div>
                 `;
-
     }
     document.getElementById("productsCols").innerHTML = container;
 
@@ -60,15 +59,13 @@ function clearForm(){
 }
 function searchProdut(searchInput){
     let container = [];
-
-
     for(let i = 0; i < productsList.length; i++){
         if(productsList[i].productName.toLocaleLowerCase().toUpperCase().includes(searchInput.value.toLocaleLowerCase().toUpperCase())){
-            container.push(productsList[i])
+            productsList[i].oldIndex = i;
+            container.push(productsList[i]);
         }
     }
     displayProducts(container);
-    // console.log(oldProductList); 
 }
 
 function deleteProduct(index){
